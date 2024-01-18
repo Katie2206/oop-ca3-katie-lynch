@@ -4,8 +4,15 @@ import java.util.Scanner;
  *  Name:
  *  Class Group:
  */
-public class CA3_Question1
-{
+public class CA3_Question1 {
+    public static void menu(){
+        System.out.println("0. Exit");
+        System.out.println("1. Add Car To Driveway");
+        System.out.println("2. Remove Car From Driveway");
+    }
+
+    
+
     public static void runSimulation()
     {
         Scanner kbrd = new Scanner(System.in);
@@ -29,12 +36,6 @@ public class CA3_Question1
 
         }while(choice != 0);
 
-    }
-
-    public static void menu(){
-        System.out.println("0. Exit");
-        System.out.println("1. Add Car To Driveway");
-        System.out.println("2. Remove Car From Driveway");
     }
 
     public static void main(String[] args) {
