@@ -13,6 +13,7 @@ public class CA3_Question1 {
         System.out.println("3. Show Driveway");
         System.out.println("4. Show Street");
     }
+
     public static void runSimulation() {
         Scanner kbrd = new Scanner(System.in);
         Stack<Integer> driveway = new Stack<Integer>();
@@ -23,23 +24,51 @@ public class CA3_Question1 {
         do {
             menu();
             choice = kbrd.nextInt();
-            if(choice == 1){
+            if (choice == 1) {
                 System.out.println("Please Enter An Integer Above 0 To Add A Car:");
                 int carToAdd = kbrd.nextInt();
 
-                if(carToAdd > 0) {
+                if (carToAdd > 0) {
                     driveway.add(carToAdd);
                     System.out.println(driveway);
-                }else{
+                } else {
                     System.out.println("Please Enter An Integer Above 0");
                 }
 
-        }while (choice != 0);
+            } else if (choice == 2) {
+                System.out.println("Please Enter A Negative Integer To Remove A Car:");
 
+                int valueEntered = 0;
+                valueEntered = kbrd.nextInt();
+
+                int carToRemove = Math.abs(valueEntered);
+
+                if (carToRemove > 0) {
+                    for(int i = 0; i <= driveway.size(); i++) {
+                        int valueMoved = driveway.pop();
+                        if (carToRemove != valueMoved) {
+                            street.add(valueMoved);
+                            System.out.println("Car(s) On The Street " + street);
+                            System.out.println("Car(s) In The Driveway " + driveway);
+                        } else if (carToRemove == valueMoved) {
+                            System.out.println("Car Removed " + valueMoved);
+                            System.out.println("Car(s) On The Street " + street);
+                            System.out.println("Car(s) In The Driveway " + driveway);
+                            while (!street.isEmpty()) {
+                                driveway.add(street.pop());
+                                System.out.println("Car(s) On The Street " + street);
+                                System.out.println("Car(s) In The Driveway " + driveway);
+                            }
+                        }
+                    }
+                }
+            }
+
+        } while (choice != 0);
     }
+        public static void main (String[]args){
 
-    public static void main(String[] args) {
+            runSimulation();
+        }
 
-        runSimulation();
-    }
 }
