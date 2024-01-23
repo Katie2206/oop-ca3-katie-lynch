@@ -11,7 +11,6 @@ public class CA3_Question1 {
         System.out.println("1. Add Car(s)");
         System.out.println("2. Remove Car(s)");
         System.out.println("3. Show Driveway");
-        System.out.println("4. Show Street");
     }
 
     public static void runSimulation() {
@@ -44,24 +43,28 @@ public class CA3_Question1 {
                 int carToRemove = Math.abs(valueEntered);
 
                 if (carToRemove > 0) {
-                    for(int i = 0; i <= driveway.size(); i++) {
+                    do {
                         int valueMoved = driveway.pop();
                         if (carToRemove != valueMoved) {
                             street.add(valueMoved);
-                            System.out.println("Car(s) On The Street " + street);
-                            System.out.println("Car(s) In The Driveway " + driveway);
+                            System.out.println("Car(s) Moved To The Street " + street + "\n");
+                            System.out.println("Car(s) Moved To The Driveway " + driveway + "\n");
                         } else if (carToRemove == valueMoved) {
                             System.out.println("Car Removed " + valueMoved);
-                            System.out.println("Car(s) On The Street " + street);
-                            System.out.println("Car(s) In The Driveway " + driveway);
+                            System.out.println("Car(s) Currently In Street " + street);
+                            System.out.println("Car(s) Currently In Driveway " + driveway + "\n");
                             while (!street.isEmpty()) {
                                 driveway.add(street.pop());
-                                System.out.println("Car(s) On The Street " + street);
-                                System.out.println("Car(s) In The Driveway " + driveway);
+                                System.out.println("Car(s) Moving Off The Street " + street + "\n");
+                                System.out.println("Car(s) Back Into The Driveway " + driveway + "\n");
                             }
                         }
-                    }
+                    }while(!street.isEmpty());
                 }
+            }else if(choice == 3){
+                System.out.println("Cars Currently In The Driveway: " + driveway);
+            }else{
+                System.out.println("Please Enter A Valid Choice");
             }
 
         } while (choice != 0);
