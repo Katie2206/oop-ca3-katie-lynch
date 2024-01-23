@@ -47,6 +47,7 @@ public class CA3_Question1 {
 
                 if (carToRemove > 0) {
                     do {
+
                         int peek = driveway.peek();
 
                         if (carToRemove != peek) {
@@ -56,6 +57,7 @@ public class CA3_Question1 {
                             System.out.println("Car(s) Moved From The Driveway " + driveway + "\n");
                         } else if (carToRemove == peek) {
                             int valueMoved = driveway.pop();
+
                             System.out.println("Car Removed " + valueMoved);
                             System.out.println("Car(s) Currently In Street " + street);
                             System.out.println("Car(s) Currently In Driveway " + driveway + "\n");
@@ -65,8 +67,14 @@ public class CA3_Question1 {
                                 System.out.println("Car(s) Back Into The Driveway " + driveway + "\n");
                             }
                         }
+
                     } while (!street.isEmpty());
+
                 }
+            }else if(choice == 3){
+                System.out.println("Cars Currently In The Driveway: " + driveway);
+            }else{
+                System.out.println("Please Enter A Valid Choice");
             }
             }else if(choice == 3){
                 System.out.println("Cars Currently In The Driveway: " + driveway);
