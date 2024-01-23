@@ -1,8 +1,8 @@
 import java.util.Stack;
 import java.util.Scanner;
 /**
- *  Name:
- *  Class Group:
+ *  Name: Katie Lynch
+ *  Class Group: SD2B
  */
 public class CA3_Question1 {
 
