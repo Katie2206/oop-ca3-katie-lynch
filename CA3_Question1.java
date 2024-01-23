@@ -40,16 +40,24 @@ public class CA3_Question1 {
                 int valueEntered = 0;
                 valueEntered = kbrd.nextInt();
 
-                int carToRemove = Math.abs(valueEntered);
+                if (valueEntered >= 0) {
+                    System.out.println("Positive Integer Entered. Please Try Again With A Negative Integer");
+                } else{
+                    int carToRemove = Math.abs(valueEntered);
 
                 if (carToRemove > 0) {
                     do {
-                        int valueMoved = driveway.pop();
-                        if (carToRemove != valueMoved) {
+
+                        int peek = driveway.peek();
+
+                        if (carToRemove != peek) {
+                            int valueMoved = driveway.pop();
                             street.add(valueMoved);
                             System.out.println("Car(s) Moved To The Street " + street + "\n");
-                            System.out.println("Car(s) Moved To The Driveway " + driveway + "\n");
-                        } else if (carToRemove == valueMoved) {
+                            System.out.println("Car(s) Moved From The Driveway " + driveway + "\n");
+                        } else if (carToRemove == peek) {
+                            int valueMoved = driveway.pop();
+
                             System.out.println("Car Removed " + valueMoved);
                             System.out.println("Car(s) Currently In Street " + street);
                             System.out.println("Car(s) Currently In Driveway " + driveway + "\n");
@@ -59,8 +67,15 @@ public class CA3_Question1 {
                                 System.out.println("Car(s) Back Into The Driveway " + driveway + "\n");
                             }
                         }
-                    }while(!street.isEmpty());
+
+                    } while (!street.isEmpty());
+
                 }
+            }else if(choice == 3){
+                System.out.println("Cars Currently In The Driveway: " + driveway);
+            }else{
+                System.out.println("Please Enter A Valid Choice");
+            }
             }else if(choice == 3){
                 System.out.println("Cars Currently In The Driveway: " + driveway);
             }else{
