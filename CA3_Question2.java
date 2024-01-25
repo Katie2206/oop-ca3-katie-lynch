@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- *  Name:
- *  Class Group:
+ *  Name: Katie Lynch
+ *  Class Group: SD2B
  */
 public class CA3_Question2
 {
@@ -11,7 +11,7 @@ public class CA3_Question2
         Starter function to create the 2D array and populate it with 0
 
      */
-    public static int[][]  floodFillStart() {
+    public static int[][] floodFillStart() {
         Scanner kb = new Scanner(System.in);
         int[][] arr = new int[10][10];
         for (int x = 0; x < 10; x++)
@@ -44,10 +44,14 @@ public class CA3_Question2
 
     public static void start()
     {
-       int[][] arr = floodFillStart();
+
+        int[][] arr = floodFillStart();
+
     }
     public static void main(String[] args) {
+
         start();
+
     }
 
 }
