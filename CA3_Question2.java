@@ -39,6 +39,17 @@ public class CA3_Question2
     }
     private static void fill(int r, int c, int[][] arr)
     {
+        Scanner kbrd = new Scanner(System.in);
+        System.out.println("Please Enter The Row You Would Like To Begin At:");
+        r = kbrd.nextInt();
+
+        System.out.println("Please Enter The Column You Would Like To Begin At:");
+        c = kbrd.nextInt();
+
+        Stack<Question_2_Pair> coordinatesChosen = new Stack<>();
+
+        coordinatesChosen.add(new Question_2_Pair(r, c));
+        
 
     }
 
