@@ -39,7 +39,10 @@ public class CA3_Question2
     }
     private static void fill(int r, int c, int[][] arr)
     {
+
         int increment = 0;
+
+
         Scanner kbrd = new Scanner(System.in);
         System.out.println("Please Enter The Row You Would Like To Begin At:");
         r = kbrd.nextInt();
@@ -48,6 +51,7 @@ public class CA3_Question2
         c = kbrd.nextInt();
 
         Stack<Question_2_Pair> coordinatesChosen = new Stack<>();
+
         coordinatesChosen.add(new Question_2_Pair(r, c));
 
 
@@ -63,6 +67,10 @@ public class CA3_Question2
                 }
             }
         }
+
+
+
+        coordinatesChosen.add(new Question_2_Pair(r, c));
 
 
     }
