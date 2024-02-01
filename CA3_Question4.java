@@ -13,6 +13,21 @@ public class CA3_Question4 {
      */
     public static boolean validate(String filename) throws FileNotFoundException
     {
+        Scanner fileIn = new Scanner(filename);
+        Stack<String> tagBracket = new Stack<String>();
+        boolean endingTag = false;
+
+        while(fileIn.hasNext() ){
+            String tag = fileIn.next();
+            tagBracket.add(tag);
+            if(tag.charAt(1) == '/'){
+                endingTag = true;
+                tagBracket.pop();
+            }else{
+                endingTag = false;
+            }
+        }
+
         return false;
     }
 
@@ -21,8 +36,6 @@ public class CA3_Question4 {
          they are valid.
          tags_valid.txt should return true;
          tags_invalid.txt should output as invalid;
-
-
      */
     public static void main(String[] args) throws FileNotFoundException {
         String[] files = {"tags_valid.txt", "tags_invalid.txt"};
