@@ -21,15 +21,20 @@ public class CA3_Question5
         System.out.println("Please Enter What You Would Like To Do (takeoff, land, next or quit) And What Flight (e.g. Flight 357): ");
         answer = kbrd.nextLine();
 
-        if(answer.substring(0, 7).equalsIgnoreCase("takeoff")){
-            takeoff.add(answer.substring(8));
-        }else if(answer.substring(0, 4).equalsIgnoreCase("land")){
-            System.out.println("land works");
-        }else if(answer.substring(0, 4).equalsIgnoreCase("next")){
-            if(!land.isEmpty()){
-                land.poll();
-            }
+        if(answer.toLowerCase().contains("takeoff flight")){
+            String newTakeoffAns = answer.toLowerCase().replace("takeoff", "");
+            String takeoffFlight = newTakeoffAns.substring(1);
+            takeoff.add(takeoffFlight);
+        }else if(answer.toLowerCase().contains("land flight")){
+            String newLandAns = answer.toLowerCase().replace("land", "");
+            String landFlight = newLandAns.substring(1);
+            land.add(landFlight);
+        }else if(answer.toLowerCase().contains("next")){
+
+        }else if(answer.toLowerCase().contains("quit")){
+
         }
+
 
     }
 
