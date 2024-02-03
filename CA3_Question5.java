@@ -33,6 +33,12 @@ public class CA3_Question5
                 if(!land.isEmpty()){
                     System.out.println("Land " + land.peek());
                     land.poll();
+                }else if(!takeoff.isEmpty()){
+                    System.out.println("Takeoff " + takeoff.peek() + "\n");
+                    takeoff.poll();
+                }else{
+                    System.out.println("All Flights Have Landed And Taken Off\n");
+
                 }
             }
         }
