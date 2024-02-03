@@ -38,6 +38,7 @@ public class CA3_Question5
                     takeoff.poll();
                 }else{
                     System.out.println("All Flights Have Landed And Taken Off\n");
+
                 }
             }
         }
