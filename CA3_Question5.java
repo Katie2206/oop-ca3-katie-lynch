@@ -14,25 +14,27 @@ public class CA3_Question5
     public static void simulation(){
         Scanner kbrd = new Scanner(System.in);
         String answer = "";
-        Queue<String> runway = new LinkedList<>();
-        PriorityQueue<String> takeoff = new PriorityQueue<>();
-        PriorityQueue<String> land = new PriorityQueue<>();
+        Queue<String> takeoff = new LinkedList<>();
+        Queue<String> land = new LinkedList<>();
 
-        System.out.println("Please Enter What You Would Like To Do (takeoff, land, next or quit) And What Flight (e.g. Flight 357): ");
-        answer = kbrd.nextLine();
+        while(!answer.equalsIgnoreCase("quit")) {
+            System.out.println("Please Enter What You Would Like To Do (takeoff, land, next or quit) And What Flight (e.g. Flight 357): ");
+            answer = kbrd.nextLine();
 
-        if(answer.toLowerCase().contains("takeoff flight")){
-            String newTakeoffAns = answer.toLowerCase().replace("takeoff", "");
-            String takeoffFlight = newTakeoffAns.substring(1);
-            takeoff.add(takeoffFlight);
-        }else if(answer.toLowerCase().contains("land flight")){
-            String newLandAns = answer.toLowerCase().replace("land", "");
-            String landFlight = newLandAns.substring(1);
-            land.add(landFlight);
-        }else if(answer.toLowerCase().contains("next")){
-
-        }else if(answer.toLowerCase().contains("quit")){
-
+            if (answer.toLowerCase().contains("takeoff flight")) {
+                String newTakeoffAns = answer.toLowerCase().replace("takeoff", "");
+                String takeoffFlight = newTakeoffAns.substring(1);
+                takeoff.add(takeoffFlight);
+            } else if (answer.toLowerCase().contains("land flight")) {
+                String newLandAns = answer.toLowerCase().replace("land", "");
+                String landFlight = newLandAns.substring(1);
+                land.add(landFlight);
+            } else if (answer.toLowerCase().contains("next")) {
+                if(!land.isEmpty()){
+                    System.out.println("Land " + land.peek());
+                    land.poll();
+                }
+            }
         }
 
 
