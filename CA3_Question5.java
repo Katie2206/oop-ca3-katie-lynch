@@ -17,7 +17,7 @@ public class CA3_Question5
         Queue<String> takeoff = new LinkedList<>();
         Queue<String> land = new LinkedList<>();
 
-        while(!answer.equalsIgnoreCase("quit")) {
+        do {
             System.out.println("Please Enter What You Would Like To Do (takeoff, land, next or quit) And What Flight (e.g. Flight 357): ");
             answer = kbrd.nextLine();
 
@@ -41,7 +41,7 @@ public class CA3_Question5
 
                 }
             }
-        }
+        }while(!answer.equalsIgnoreCase("quit"));
 
 
     }
