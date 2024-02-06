@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class CA3_Question3
 {
     public static void readFile(String fileName) throws FileNotFoundException {
+
         File file = new File(fileName);
         Scanner in = new Scanner(file);
         in.useDelimiter("[^A-Za-z0-9_]+");
@@ -20,6 +21,7 @@ public class CA3_Question3
         ArrayList<String> identifiers = new ArrayList<>();
         int lineNum = 0;
         String line = "";
+
         String findIdentifiers = "";
 
         //while loop loops through file until there are no values left
@@ -40,6 +42,7 @@ public class CA3_Question3
         //Test to see if values store
         System.out.println("Identifiers: " + identifiers);
         System.out.println("File: " + fileLines);
+
     }
 
     public static void main(String[] args) throws FileNotFoundException {
