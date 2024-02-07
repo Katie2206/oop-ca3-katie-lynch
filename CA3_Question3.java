@@ -1,10 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
+import java.util.*;
 
 /**
  *  Name:
@@ -19,16 +15,10 @@ public class CA3_Question3
         Scanner f = new Scanner(file);
         Map<String, List<Integer>> matchedIdentifiers = new HashMap<String, List<Integer>>();
         List<Integer> numList = new ArrayList<Integer>();
-        Scanner in = new Scanner(file);
-        in.useDelimiter("[^A-Za-z0-9_]+");
-        Map<Integer, String> fileLines = new HashMap<>();
-        ArrayList<String> identifiers = new ArrayList<>();
-
         int lineNum = 0;
 //        int[] lineNumTotal = {};
         String line = "";
         String identifier = "";
-
 
         //loops through entire file and stores line numbers and lines
         while (f.hasNext()) {
@@ -72,26 +62,10 @@ public class CA3_Question3
 
             System.out.println("Identifier: " + outputMap.getKey() + " == " + outputMap.getValue());
         }
-        String findIdentifiers = "";
-
-        //while loop loops through file until there are no values left
-        while(in.hasNext()){
-            //counts lines in file
-            lineNum++;
-            //stores individual lines
-            line = in.nextLine();
-            //adds both the line number and the contents of each line into the map
-            fileLines.put(lineNum, line);
-
-            //looks for identifiers that match the useDelimiter pattern
-            findIdentifiers = in.next();
-            //adds identifiers to (currently temporary) arraylist
-            identifiers.add(findIdentifiers);
-        }
-
-        //Test to see if values store
-        System.out.println("Identifiers: " + identifiers);
-        System.out.println("File: " + fileLines);
+//        while(in.hasNext()){
+//            identifiers = in.next();
+//
+//        }
 
     }
 
