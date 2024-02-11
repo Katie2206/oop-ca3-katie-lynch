@@ -49,6 +49,7 @@ public class CA3_Question4 {
             } else {
                 //if the tags do not match, it is invalid so false is returned
                 return false;
+
             }
         }
         return true;
@@ -83,9 +84,25 @@ public class CA3_Question4 {
                 tagBracket.add(tag);
             }else{
                 tagBracket.add(tag);
+
             }
 
         }
+        return true;
+//        while(fileIn.hasNext() ){
+//            String tag = fileIn.next();
+//            tagBracket.add(tag);
+//            System.out.println(tagBracket);
+//            if(tag.charAt(1) == '/'){
+//                endingTag = true;
+//                tagBracket.pop();
+//                System.out.println(tagBracket);
+//            }else{
+//                endingTag = false;
+//            }
+//        }
+
+
 
         
         //if they match remove them and move to the next tags until stack is empty
@@ -100,6 +117,7 @@ public class CA3_Question4 {
             }
         }
         return true;
+
     }
 
     /*
@@ -125,6 +143,5 @@ public class CA3_Question4 {
         } else {
             System.out.println("This file is invalid");
         }
-
     }
 }
