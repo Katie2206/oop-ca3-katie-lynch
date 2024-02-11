@@ -68,6 +68,40 @@ public class CA3_Question4 {
 
     }
 
+    public static boolean validateFile2() throws FileNotFoundException
+    {
+        //read in file
+        File filename = new File("tags_invalid");
+        Scanner fileIn = new Scanner(filename);
+        Deque<String> tagBracket = new LinkedList<>();
+
+        //loops through each word in the file
+        while(fileIn.hasNext() ){
+            String tag = fileIn.next();
+            if(tag.charAt(1) == '/'){
+                tag = tag.replaceAll("/", "");
+                tagBracket.add(tag);
+            }else{
+                tagBracket.add(tag);
+            }
+
+        }
+
+        
+        //if they match remove them and move to the next tags until stack is empty
+        while(!tagBracket.isEmpty()){
+            if (tagBracket.peekFirst().equals(tagBracket.peekLast())) {
+                tagBracket.pollFirst();
+                tagBracket.pollLast();
+
+            } else {
+                //if the tags do not match, it is invalid so false is returned
+                return false;
+            }
+        }
+        return true;
+    }
+
     /*
         This function tests the files in the files array to see if
          they are valid.
@@ -80,6 +114,13 @@ public class CA3_Question4 {
 
         System.out.print(file1 +": ");
         if (validateFile1()) {
+            System.out.println("This file is valid");
+        } else {
+            System.out.println("This file is invalid");
+        }
+
+        System.out.print(file2 +": ");
+        if (validateFile2()) {
             System.out.println("This file is valid");
         } else {
             System.out.println("This file is invalid");
