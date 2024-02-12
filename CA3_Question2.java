@@ -58,12 +58,54 @@ public class CA3_Question2
         for(int i = 0; i < arr.length; i++) {
             for(int j = 0; j < arr[i].length; j++) {
 
-                if(arr[i][j] == coordinatesChosen.peek()){
-
-                }
-
-                if(arr[r][c] == 0){
-                    arr[r][c] = ++increment;
+                if(coordinatesChosen.peek().equals(arr[i][j])){
+                    //checks if the row above is 0
+                    if(r-1>=0){
+                        //stores position
+                        int n = arr[r-1][c];
+                        //if it is 0, it increments it and adds the coordinates to the stack
+                        if(n == 0){
+                            ++increment;
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }else{
+                            //if it isn't 0, it adds the coordinates
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }
+                        //checks if the column to the left is 0
+                    }else if(c-1>=0){
+                        //stores position
+                        int w = arr[r][c-1];
+                        //if it is 0, it increments it and adds the coordinates to the stack
+                        if(w == 0){
+                            ++increment;
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }else{
+                            //if it isn't 0, it adds the coordinates
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }
+                    }else if(r+1<= arr.length){
+                        //stores position
+                        int s = arr[r+1][c];
+                        //if it is 0, it increments it and adds the coordinates to the stack
+                        if(s == 0){
+                            ++increment;
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }else{
+                            //if it isn't 0, it adds the coordinates
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }
+                    }else if(c+1<= arr[r].length){
+                        //stores position
+                        int e = arr[r][c+1];
+                        //if it is 0, it increments it and adds the coordinates to the stack
+                        if(e == 0){
+                            ++increment;
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }else{
+                            //if it isn't 0, it adds the coordinates
+                            coordinatesChosen.add(new Question_2_Pair(r, c));
+                        }
+                    }
                 }
             }
         }
